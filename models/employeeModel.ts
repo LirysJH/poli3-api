@@ -1,6 +1,59 @@
 import Mongoose from 'mongoose';
 
-const dataSchema: Mongoose.Schema = new Mongoose.Schema({
+const declarationsSchema: Mongoose.Schema = new Mongoose.Schema({
+    amount: {
+        required: true,
+        type: Number
+    },
+    possibility: {
+        required: true,
+        type: Boolean
+    }
+});
+
+const scheduleSchema: Mongoose.Schema = new Mongoose.Schema({
+    monday: {
+        required: true,
+        type: String
+    },
+    tuesday: {
+        required: true,
+        type: String
+    },
+    wednesday: {
+        required: true,
+        type: String
+    },
+    thursday: {
+        required: true,
+        type: String
+    },
+    friday: {
+        required: true,
+        type: String
+    }
+});
+
+const departmentSchema: Mongoose.Schema = new Mongoose.Schema({
+    number: {
+        required: true,
+        type: String
+    },
+    cabinet: {
+        required: true,
+        type: String
+    },
+    title: {
+        required: true,
+        type: String
+    },
+    schedule: {
+        required: false,
+        type: scheduleSchema
+    }
+});
+
+const employeeSchema: Mongoose.Schema = new Mongoose.Schema({
     name: {
         required: true,
         type: String
@@ -27,56 +80,12 @@ const dataSchema: Mongoose.Schema = new Mongoose.Schema({
     },
     declarations: {
         required: true,
-        type: Object,
-        amount: {
-            required: true,
-            type: String
-        },
-        possibility: {
-            required: true,
-            type: Boolean
-        }
+        type: declarationsSchema
     },
     department: {
         required: true,
-        type: Object,
-        number: {
-            required: true,
-            type: String
-        },
-        cabinet: {
-            required: true,
-            type: String
-        },
-        title: {
-            required: true,
-            type: String
-        },
-        schedule: {
-            required: false,
-            type: Object,
-            monday: {
-                required: true,
-                type: String
-            },
-            tuesday: {
-                required: true,
-                type: String
-            },
-            wednesday: {
-                required: true,
-                type: String
-            },
-            thursday: {
-                required: true,
-                type: String
-            },
-            friday: {
-                required: true,
-                type: String
-            }
-        }
+        type: departmentSchema
     }
 });
 
-module.exports = Mongoose.model('EmployeeData', dataSchema);
+module.exports = Mongoose.model('EmployeeData', employeeSchema);
