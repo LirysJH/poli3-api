@@ -1,13 +1,12 @@
 {
-  "type": "module",
   "name": "poli3-api",
   "version": "1.0.0",
   "description": "Poli3 API",
   "main": "index.cjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.cjs",
-    "dev": "nodemon index.cjs"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "LirysJH",
