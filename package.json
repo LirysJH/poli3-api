@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "poli3-api",
   "version": "1.0.0",
   "description": "Poli3 API",
