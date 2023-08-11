@@ -4,9 +4,9 @@ import mongoose from 'mongoose';
 require('dotenv').config();
 
 const PORT: number = 3000;
-const mongoDBUrl: string = 'mongodb+srv://lirys:lvz1RdFAFhyhk3Ry@cluster0.3zh0boc.mongodb.net/';
+const MONGO_DB_URL: string = 'mongodb+srv://lirys:lvz1RdFAFhyhk3Ry@cluster0.3zh0boc.mongodb.net/';
 
-mongoose.connect(mongoDBUrl);
+mongoose.connect(MONGO_DB_URL);
 const database: mongoose.Connection = mongoose.connection;
 
 database.on('connected', () => console.log('DataBase connected'));
