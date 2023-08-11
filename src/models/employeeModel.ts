@@ -1,6 +1,6 @@
-import Mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-const declarationsSchema: Mongoose.Schema = new Mongoose.Schema({
+const declarationsSchema = new mongoose.Schema({
     amount: {
         required: true,
         type: Number
@@ -11,7 +11,7 @@ const declarationsSchema: Mongoose.Schema = new Mongoose.Schema({
     }
 });
 
-const scheduleSchema: Mongoose.Schema = new Mongoose.Schema({
+const scheduleSchema = new mongoose.Schema({
     monday: {
         required: true,
         type: String
@@ -34,7 +34,7 @@ const scheduleSchema: Mongoose.Schema = new Mongoose.Schema({
     }
 });
 
-const departmentSchema: Mongoose.Schema = new Mongoose.Schema({
+const departmentSchema = new mongoose.Schema({
     number: {
         required: true,
         type: String
@@ -53,7 +53,7 @@ const departmentSchema: Mongoose.Schema = new Mongoose.Schema({
     }
 });
 
-const employeeSchema: Mongoose.Schema = new Mongoose.Schema({
+const employeeSchema = new mongoose.Schema({
     name: {
         required: true,
         type: String
@@ -88,4 +88,4 @@ const employeeSchema: Mongoose.Schema = new Mongoose.Schema({
     }
 });
 
-module.exports = Mongoose.model('EmployeeData', employeeSchema);
+module.exports = mongoose.model('EmployeeData', employeeSchema);
