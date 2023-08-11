@@ -1,7 +1,3 @@
-// import {IEmployee} from '../models/IEmployee.ts';
-// import * as express from 'express';
-// import {Router, Request, Response} from "express";
-
 const express = require('express');
 const router = express.Router();
 const EmployeeModel = require('../models/employeeModel.ts');
