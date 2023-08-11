@@ -20,6 +20,6 @@ const routes = require('./src/routes/routes.ts');
 
 app.use(express.json()); // support json
 app.use(cors());
-app.use('/api', routes);
+app.use('/', routes);
 
 app.listen(PORT, () => console.log(`Server running on port ':${PORT}'`));
